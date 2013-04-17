@@ -1,0 +1,6 @@
+<%= label_tag :state %><br />
+<% unless @states.blank? %>
+    <%= collection_select(:user, :state_id, @states, :id, :name, :prompt => true, :prompt => "-- Select a State --", :selected => @user?  @user.state_id : "")%>
+<% else %>
+    <%= select_tag "state_id","task_id", :prompt => "-- Select a State --" %>
+<% end %>
